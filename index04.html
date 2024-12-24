@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据新闻展示</title>
+    <link rel="stylesheet" href="layout/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .chart-title {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            font-size: 1.2em;
+        }
+
+        .chart {
+            height: 350px;
+            width: 100%;
+        }
+
+        .chart-note {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">个人简介</a>
+            <a href="index01.html">六级英语资料</a>
+            <a href="index02.html">马克思主义原理</a>
+            <a href="index03.html">网络与新媒体</a>
+            <a href="index04.html">数据新闻</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>新闻传播数据分析</h1>
+        
+        <div class="data-grid">
+            <div class="chart-card">
+                <h3 class="chart-title">主要新媒体平台用户规模</h3>
+                <div id="userScale" class="chart"></div>
+                <div class="chart-note">数据来源：2024年第三季度互联网发展报告</div>
+            </div>
+
+            <div class="chart-card">
+                <h3 class="chart-title">AI在新闻行业的应用分布</h3>
+                <div id="aiApplication" class="chart"></div>
+                <div class="chart-note">数据来源：2024年新闻行业AI应用调研报告</div>
+            </div>
+
+            <div class="chart-card">
+                <h3 class="chart-title">各年龄段新闻获取渠道</h3>
+                <div id="newsChannel" class="chart"></div>
+                <div class="chart-note">数据来源：2024年用户新闻消费习惯调查</div>
+            </div>
+
+            <div class="chart-card">
+                <h3 class="chart-title">传统媒体与新媒体市场份额</h3>
+                <div id="marketTrend" class="chart"></div>
+                <div class="chart-note">数据来源：2024年媒体行业发展报告</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 用户规模图表
+            const userScale = echarts.init(document.getElementById('userScale'));
+            userScale.setOption({
+                grid: {
+                    top: '10%',
+                    right: '3%',
+                    bottom: '15%'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['抖音', '微信', '快手', '微博', '知乎', '头条'],
+                    axisLabel: {
+                        interval: 0
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '亿用户'
+                },
+                series: [{
+                    data: [7.5, 12.9, 6.0, 5.2, 1.8, 3.5],
+                    type: 'bar',
+                    barWidth: '40%',
+                    itemStyle: {
+                        color: '#3498db'
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{c}亿'
+                    }
+                }]
+            });
+
+            // AI应用分布图表
+            const aiApplication = echarts.init(document.getElementById('aiApplication'));
+            aiApplication.setOption({
+                series: [{
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    data: [
+                        {value: 35, name: '内容生产'},
+                        {value: 25, name: '数据分析'},
+                        {value: 20, name: '用户画像'},
+                        {value: 15, name: '内容分发'},
+                        {value: 5, name: '其他'}
+                    ],
+                    label: {
+                        show: true,
+                        formatter: '{b}\n{d}%',
+                        position: 'outside',
+                        alignTo: 'edge',
+                        minMargin: 5,
+                        edgeDistance: 10,
+                        lineHeight: 15
+                    },
+                    labelLine: {
+                        length: 15,
+                        length2: 0,
+                        maxSurfaceAngle: 80
+                    }
+                }]
+            });
+
+            // 新闻获取渠道图表
+            const newsChannel = echarts.init(document.getElementById('newsChannel'));
+            newsChannel.setOption({
+                grid: {
+                    top: '15%',
+                    right: '5%',
+                    bottom: '15%'
+                },
+                legend: {
+                    top: '0%'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['18-25', '26-35', '36-45', '46-55', '56+'],
+                    axisLabel: {
+                        interval: 0
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '占比(%)'
+                },
+                series: [{
+                    name: '社交媒体',
+                    type: 'bar',
+                    stack: 'total',
+                    data: [40, 35, 25, 15, 10],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{c}%'
+                    }
+                }, {
+                    name: '新闻APP',
+                    type: 'bar',
+                    stack: 'total',
+                    data: [30, 35, 30, 25, 15],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{c}%'
+                    }
+                }, {
+                    name: '传统媒体',
+                    type: 'bar',
+                    stack: 'total',
+                    data: [15, 20, 30, 45, 60],
+                    label: {
+                        show: true,
+                        position: 'inside',
+                        formatter: '{c}%'
+                    }
+                }]
+            });
+
+            // 市场份额趋势图表
+            const marketTrend = echarts.init(document.getElementById('marketTrend'));
+            marketTrend.setOption({
+                grid: {
+                    top: '10%',
+                    right: '3%',
+                    bottom: '15%'
+                },
+                legend: {
+                    top: '0%'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['2019', '2020', '2021', '2022', '2023']
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '占比(%)'
+                },
+                series: [{
+                    name: '传统媒体',
+                    type: 'line',
+                    data: [60, 52, 45, 38, 32],
+                    symbol: 'circle',
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{c}%'
+                    }
+                }, {
+                    name: '新媒体',
+                    type: 'line',
+                    data: [40, 48, 55, 62, 68],
+                    symbol: 'circle',
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{c}%'
+                    }
+                }]
+            });
+        });
+    </script>
+</body>
+</html> 

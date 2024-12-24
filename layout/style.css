@@ -1,0 +1,410 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    min-height: 100vh;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* 主要内容区域 */
+.container {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 2rem;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* 卡片样式 */
+.card {
+    background: white;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* 标题样式 */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+h2 {
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+/* 列表样式 */
+ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+ul li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+ul li:before {
+    content: "•";
+    color: #3498db;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+/* 个人简介样式 */
+.profile-content {
+    text-align: center;
+    padding: 1rem;
+}
+
+.profile-content img {
+    border: 5px solid #3498db;
+    padding: 5px;
+    margin-bottom: 1.5rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-links a {
+        margin: 0.5rem 0;
+        width: 80%;
+        text-align: center;
+    }
+    
+    .container {
+        padding: 1rem;
+        margin-top: 120px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+/* 数据新闻页面的图表容器 */
+#chart1, #chart2 {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+} 
+
+/* 个人简介内容样式 */
+.section {
+    margin: 2rem 0;
+}
+
+.section h3 {
+    color: #2980b9;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* 时间线样式 */
+.timeline {
+    padding: 1rem 0;
+}
+
+.experience {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid #3498db;
+}
+
+.experience h3 {
+    color: #2980b9;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* 基本信息样式优化 */
+.profile-content p {
+    margin: 0.5rem 0;
+    color: #34495e;
+}
+
+/* 列表样式优化 */
+.card ul {
+    margin: 1rem 0;
+}
+
+.card ul li {
+    color: #34495e;
+    line-height: 1.8;
+} 
+
+/* 左侧目录栏样式 */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 200px;
+    height: calc(100vh - 80px);
+    background: white;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #34495e;
+}
+
+.menu li:hover {
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+}
+
+.menu li.active {
+    background: #3498db;
+    color: white;
+}
+
+/* 调整主容器位置 */
+.container {
+    margin-left: 220px;
+    margin-right: 20px;
+    max-width: none;
+}
+
+/* 内容区域样式 */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* 响应式设计补充 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-top: 60px;
+        padding: 1rem;
+    }
+
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .menu li {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+} 
+
+/* iframe文档显示样式 */
+.doc-frame {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+    background: white;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* 优化iframe在移动端的显示 */
+@media (max-width: 768px) {
+    .doc-frame {
+        min-height: 400px;
+    }
+} 
+
+/* 在现有样式中添加 */
+.pdf-download {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #3498db;
+}
+
+.download-link {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #2c3e50;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.download-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.download-icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.download-text {
+    margin-left: auto;
+    color: #3498db;
+    font-weight: 500;
+}
+
+.download-link:hover .download-text {
+    text-decoration: underline;
+} 
+
+/* 添加PDF容器样式 */
+.pdf-container {
+    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.pdf-container object {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+/* 调整PDF下载区域样式 */
+.pdf-download {
+    margin: 20px 0;
+    text-align: right;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .pdf-container object {
+        height: 400px;
+    }
+} 
+
+/* 资源块样式 */
+.resource-block {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.resource-title {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    font-size: 1.3em;
+}
+
+.audio-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.audio-container audio {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+}
+
+/* 调整PDF容器的间距 */
+.pdf-container {
+    margin: 20px 0;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .resource-block {
+        padding: 15px;
+    }
+    
+    .pdf-container object {
+        height: 400px;
+    }
+} 

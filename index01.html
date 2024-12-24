@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六级英语资料</title>
+    <link rel="stylesheet" href="layout/style.css">
+    <style>
+        .resource-grid {
+            display: grid;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .video-title {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            font-size: 1.2em;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .video-description {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .resource-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            margin: 20px 0;
+            padding-left: 15px;
+            border-left: 4px solid #3498db;
+        }
+
+        .video-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .video-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .video-link .arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .video-link:hover .arrow {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">个人简介</a>
+            <a href="index01.html">六级英语资料</a>
+            <a href="index02.html">马克思主义原理</a>
+            <a href="index03.html">网络与新媒体</a>
+            <a href="index04.html">数据新闻</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>六级英语学习资料</h1>
+        
+        <div class="resource-grid">
+            <div class="resource-section">
+                <h2 class="section-title">新闻听力训练</h2>
+                <div class="video-card">
+                    <h3 class="video-title">新闻听力专项训练</h3>
+                    <div class="video-container">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV12Q4y1m7Au&high_quality=1&danmaku=0" 
+                                allowfullscreen="allowfullscreen" 
+                                width="100%" 
+                                height="100%" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+                        </iframe>
+                    </div>
+                    <div class="video-description">
+                        本视频提供系统的新闻听力训练方法和实践，帮助提高新闻听力理解能力。
+                        <a href="https://www.bilibili.com/video/BV12Q4y1m7Au" target="_blank" class="video-link">
+                            在B站观看 <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-section">
+                <h2 class="section-title">长难句解析</h2>
+                <div class="video-card">
+                    <h3 class="video-title">长难句分析与讲解</h3>
+                    <div class="video-container">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV1xV4y1N7hZ&high_quality=1&danmaku=0" 
+                                allowfullscreen="allowfullscreen" 
+                                width="100%" 
+                                height="100%" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+                        </iframe>
+                    </div>
+                    <div class="video-description">
+                        详细讲解六级考试中常见的长难句结构，提供实用的分析方法。
+                        <a href="https://www.bilibili.com/video/BV1xV4y1N7hZ" target="_blank" class="video-link">
+                            在B站观看 <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-section">
+                <h2 class="section-title">短文理解技巧</h2>
+                <div class="video-card">
+                    <h3 class="video-title">短文阅读理解训练</h3>
+                    <div class="video-container">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV1DE421N7RE&high_quality=1&danmaku=0" 
+                                allowfullscreen="allowfullscreen" 
+                                width="100%" 
+                                height="100%" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+                        </iframe>
+                    </div>
+                    <div class="video-description">
+                        介绍短文阅读的关键技巧和解题方法，提高阅读理解能力。
+                        <a href="https://www.bilibili.com/video/BV1DE421N7RE" target="_blank" class="video-link">
+                            在B站观看 <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
